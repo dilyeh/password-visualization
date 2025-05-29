@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+#keyboard {
+  width: 725px;
+  height: 200px;
+  padding: 10px;
+}
+
+text {
+  font-size: 11pt;
+}
