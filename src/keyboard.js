@@ -51,9 +51,7 @@ export function Keyboard() {
                     width={(key.length * keySize) - 2*padding} height={keySize - 2*padding} 
                     fill={key.color}
                     rx="5" ry="5"
-                >
-
-                </rect>
+                ></rect>
                 <text x="10" y="20">{ key.char }</text>
             </svg>
         );
@@ -103,7 +101,8 @@ class Key {
         // lets follow the equation y=-(x-1)^2 + 1
         // this should emphasize the smaller ones a bit more
         // to change the exponent to increase emphasis (must be even though)
-        let adjustedFrequency = Math.min(-1 * ((this.frequency * amplifier) - 1) ** 2 + 1, 1);
+        // let adjustedFrequency = Math.min(-1 * ((this.frequency * amplifier) - 1) ** 2 + 1, 1);
+        let adjustedFrequency = this.frequency;
 
         // note, if we wanna use something like magma, use rgb instead of hsl
         let color = { // this is disgusting
@@ -116,4 +115,28 @@ class Key {
         console.log(colorString);
         return colorString;
     }
+}
+
+
+export function ColorLegend() {
+    let minColor = `hsl(${Key.minColor.hue}, ${Key.minColor.saturation}%, ${Key.minColor.lightness}%)`;
+    let maxColor = `hsl(${Key.maxColor.hue}, ${Key.maxColor.saturation}%, ${Key.maxColor.lightness}%)`;
+    return (
+        <svg id="color-legend">
+            <defs>
+                <linearGradient id="grad1">
+                    <stop offset="0%" stop-color={minColor} />
+                    <stop offset="100%" stop-color={maxColor} />
+                </linearGradient>
+            </defs>
+            <rect 
+                x="0" y="0" 
+                width="300" height="50"
+                fill="url('#grad1')"
+            />
+            <text x='0' y='70'>Least Common</text>
+            <text x='200' y='70'>Most Common</text>
+            <text x='110' y='90'>Frequency</text>
+        </svg>
+    )
 }

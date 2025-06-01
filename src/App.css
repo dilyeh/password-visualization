@@ -46,3 +46,10 @@
 text {
   font-size: 11pt;
 }
+
+#color-legend {
+  display: block;
+  width: 300px;
+  height: 150px;
+  margin: auto;
+}
