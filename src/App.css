@@ -50,6 +50,10 @@ text {
 #color-legend {
   display: block;
   width: 300px;
-  height: 150px;
+  height: 100px;
   margin: auto;
+}
+
+#subtitle {
+  padding-bottom: 10px;
 }

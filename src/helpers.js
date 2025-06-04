@@ -1,6 +1,6 @@
 // i did it again... i made a helpers file
 export const keyMap = [
-    { keys: "~1234567890-=", offset: 0 }, // row 1 
+    { keys: "`1234567890-=", offset: 0 }, // row 1 
     { keys: "qwertyuiop[]\\", offset: 1.5 }, // row 2
     { keys: "asdfghjkl;'", offset: 1.75 }, // row 3
     { keys: "zxcvbnm,./", offset: 2.25 } // row 4

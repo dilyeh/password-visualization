@@ -101,8 +101,8 @@ class Key {
         // lets follow the equation y=-(x-1)^2 + 1
         // this should emphasize the smaller ones a bit more
         // to change the exponent to increase emphasis (must be even though)
-        // let adjustedFrequency = Math.min(-1 * ((this.frequency * amplifier) - 1) ** 2 + 1, 1);
-        let adjustedFrequency = this.frequency;
+        let adjustedFrequency = Math.min(-1 * ((this.frequency * amplifier) - 1) ** 2 + 1, 1);
+        //let adjustedFrequency = this.frequency;
 
         // note, if we wanna use something like magma, use rgb instead of hsl
         let color = { // this is disgusting
@@ -135,7 +135,7 @@ export function ColorLegend() {
                 fill="url('#grad1')"
             />
             <text x='0' y='70'>Least Common</text>
-            <text x='200' y='70'>Most Common</text>
+            <text x='202' y='70'>Most Common</text>
             <text x='110' y='90'>Frequency</text>
         </svg>
     )
